@@ -1,0 +1,31 @@
+@media (max-width: 1000px) {
+    .sidebar {
+        display: none;
+    }
+    .content-container {
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-inner {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .content-container {
+        padding-top: 0px
+    }
+    .navbar-inner {
+        padding: 0;
+    }
+    .content {
+        margin: 0;
+    }
+    .search-bar {
+        display: none;
+    }
+    .header {
+        border: none;
+        background: transparent;
+    }
+}
