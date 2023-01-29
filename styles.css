@@ -8,7 +8,7 @@
     --color-border: #dbdbdb;
 }
 
-.main-container {
+#app {
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -71,6 +71,34 @@
 .navbar-icons {
     width: 360px;
     height: 22px;
+}
+
+.profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-user {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    position: absolute;
+    top: 100%;
+    font-size: 0.78rem;
+    background-color: #323232;
+    color: white;
+    opacity: 0.8;
+    padding: 5px;
+    white-space: nowrap;
+    border-radius: 5px;
+    visibility: hidden;
+    z-index: 1;
+}
+.profile-pic:hover .tooltip-text {
+    visibility: visible;
 }
 
 .profile-pic img {

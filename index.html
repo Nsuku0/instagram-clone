@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -17,7 +19,8 @@
   </head>
 
   <body>
-    <div class="main-container">
+    <div id="firebaseui-auth-container"></div>
+    <div id="app">
       <div class="navbar">
         <div class="navbar-inner">
           <div class="logo">
@@ -105,13 +108,16 @@
                   <div class="poA5q" style="margin-left: -423px"></div>
                 </div>
               </div>
-              <div class="profile-pic margin-left">
+              <div class="profile-pic logout margin-left">
+                
                 <img
                   alt="imharjotsingh's profile picture"
                   data-testid="user-avatar"
                   draggable="false"
                   src="assets/akhil.png"
                 />
+                <span class="tooltip-text">Logout</span>
+                <span class="auth-user"></span>
               </div>
             </div>
           </div>
@@ -1099,17 +1105,43 @@
       </main>
     </div>
 
-    <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js'
-
-    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
-    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js'
-
-    // Add Firebase products that you want to use
-    import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js'
-    import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
-  </script>
-  
   </body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+  <script >
+  
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAUorofee4Z3Q-U1Qo_6BOnVzdxeilTSqM",
+      authDomain: "instagram-clone-29dcc-f6ab5.firebaseapp.com",
+      databaseURL: "https://instagram-clone-29dcc-default-rtdb.firebaseio.com",
+      projectId: "instagram-clone-29dcc",
+      storageBucket: "instagram-clone-29dcc.appspot.com",
+      messagingSenderId: "547172298337",
+      appId: "1:547172298337:web:ccd1b1fb8066eade890420"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  
+    console.log(auth);
+
+    
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"
+        integrity="sha512-AvtLzKgbVcTZJ0QZ3nLJoTGN2wiE/emjebM9xneyqhtEBRTsNB+8oeQGkOmyOF+gnJd7k3Zvnghs9m6EuTpTEw=="
+        crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </html>
